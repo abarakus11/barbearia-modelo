@@ -1,30 +1,49 @@
 # Barbearia Studio
 
-Sistema web em PHP para gestão de barbearia/salão: site institucional, agendamentos online e painel administrativo.
+Site institucional da barbearia em **Next.js**, pronto para deploy na **Vercel**.
 
-## Requisitos
+## Stack
 
-- PHP 7.4+ (recomendado 8.x)
-- MySQL / MariaDB
-- Apache (XAMPP, Laragon ou similar)
+- Next.js 15 + React 19
+- TypeScript + Tailwind CSS
+- Dados estáticos migrados do sistema PHP original
 
-## Instalação
+## Páginas
 
-1. Coloque a pasta do projeto em `htdocs` (ex.: `C:\xampp\htdocs\barbearia`).
-2. Crie o banco de dados `barbearia` no MySQL.
-3. Importe o arquivo `barbearia.sql`.
-4. Ajuste as credenciais em `sistema/conexao.php` se necessário.
-5. Acesse o site em `http://localhost/barbearia/`.
+- `/` — home com serviços, produtos, sobre, contato e depoimentos
+- `/agendamentos` — formulário de agendamento (confirmação via WhatsApp)
+- `/servicos` — catálogo de serviços
+- `/produtos` — catálogo de produtos
 
-## Painel administrativo
+## Desenvolvimento local
 
-- URL: `http://localhost/barbearia/sistema/`
-- E-mail ou CPF: `admin@admin` ou `000.000.000-00`
-- Senha padrão: `123`
+```bash
+npm install
+npm run dev
+```
 
-## Estrutura
+Abra [http://localhost:3000](http://localhost:3000).
 
-- `/` — site público (serviços, produtos, agendamentos)
-- `/sistema` — painel administrativo
-- `/ajax` — endpoints de agendamento e cadastro
-- `barbearia.sql` — estrutura e dados iniciais do banco
+## Deploy na Vercel
+
+1. Conecte o repositório GitHub `abarakus11/barbearia-modelo`
+2. Framework: **Next.js** (detectado automaticamente)
+3. Deploy
+
+Não é necessário configurar PHP nem MySQL na Vercel.
+
+## Sistema PHP original
+
+O código PHP + MySQL antigo ficou em `legacy/` para uso local com XAMPP.
+O dump do banco continua em `barbearia.sql`.
+
+### XAMPP (opcional)
+
+1. Importe `barbearia.sql` no MySQL
+2. Copie `legacy/` para `htdocs/barbearia-legacy`
+3. Acesse `http://localhost/barbearia-legacy/sistema/`
+4. Login: `admin@admin` / senha `123`
+
+## Personalização
+
+Edite `src/data/site.ts` para alterar textos, preços, profissionais e imagens.

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-neutral-900;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-center md:text-4xl;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md bg-brand-red px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-700;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-md border border-brand-red px-6 py-3 text-sm font-semibold text-brand-red transition hover:bg-brand-red hover:text-white;
+}
+
+.card-surface {
+  @apply rounded-2xl bg-brand-cream p-6 shadow-sm;
+}

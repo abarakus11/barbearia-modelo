@@ -1,19 +1,29 @@
-# Sistema operacional
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# Build / debug
+*.log
+npm-debug.log*
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# IDE / editor
+# IDE
 .idea/
 .vscode/
 *.swp
-*.swo
 
-# Logs e temporários
-*.log
-*.tmp
-*.bak
-
-# Ambiente local (se usar no futuro)
+# Env
 .env
 .env.local
+.env*.local
+
+# Vercel
+.vercel
